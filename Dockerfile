@@ -27,6 +27,7 @@ RUN set -ex \
     && . /tmp/commands \
     && rm /tmp/commands
 
+ENV PAGER="less -FR~"
 ENV PATH="/serge/bin:${PATH}"
 ENV PERL5LIB="/serge/lib${PERL5LIB:+:}${PERL5LIB}"
 ENV SERGE_DATA_DIR=/data
