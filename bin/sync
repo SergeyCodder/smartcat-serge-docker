@@ -1,0 +1,8 @@
+#!/bin/sh
+
+pull
+pull-ts
+localize
+push-ts
+push
+clean-ts

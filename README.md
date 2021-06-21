@@ -12,7 +12,7 @@ Initially you can run Serge on your own computer to setup your localization proj
 
 2. Run this command to install Serge for the first time, or to update it to a latest version:
 
-       $ docker pull smartcatcom/serge
+       $ docker pull smartcatcom/serge:v2
 
 ## Getting Started
 

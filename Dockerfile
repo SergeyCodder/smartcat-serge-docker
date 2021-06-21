@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.13
 
 ARG GIT_SHA1
 ARG SERGE_BUILD
@@ -28,12 +28,14 @@ RUN set -ex \
     && rm /tmp/commands
 
 ENV PAGER="less -FR~"
-ENV PATH="/serge/bin:${PATH}"
+ENV PATH="/root/bin:/serge/bin:${PATH}"
 ENV PERL5LIB="/serge/lib${PERL5LIB:+:}${PERL5LIB}"
-ENV SERGE_DATA_DIR=/data
+ENV SERGE_DATA_DIR=/root
 ENV SERGE_BUILD="${SERGE_BUILD}"
 
-VOLUME /data /tmp/.ssh
-WORKDIR /data
+#VOLUME /data
+WORKDIR /root
+
+COPY /bin /usr/local/bin
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
