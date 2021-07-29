@@ -1,11 +1,13 @@
 #!/bin/sh
 set -e
 
-. /root/.env
+if test -e "/root/.env"; then
+    . /root/.env
+fi
 
 if test ! -e "/root/.initialized"; then
     echo -e "\033[01;34mInitializing the project\033[00m"
-    /usr/local/bin/boot/initialize.sh
+    /usr/local/bin/boot/initialize
     touch /root/.initialized
 fi
 
@@ -15,8 +17,8 @@ fi
 # will be reported incorrectly by `ls -l` (as 755),
 # but will still work.
 
-chmod 700 /root/.ssh
-if test -e "/root/.ssh/*"; then
+if test -e "/root/.ssh"; then
+    chmod 700 /root/.ssh
     chmod 600 /root/.ssh/*
 fi
 if test -e "/root/.ssh/*.pub"; then
