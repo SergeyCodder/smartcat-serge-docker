@@ -19,6 +19,7 @@ LABEL maintainers="Igor Afanasyev <igor@smartcat.ai>"
 LABEL serge_git_sha1="${GIT_SHA1}"
 
 COPY /serge /serge
+COPY /replacement/smartcat_v2.pm /serge/lib/Serge/Sync/Plugin/TranslationService/
 
 RUN set -ex \
     && echo apk add --no-cache ${INSTALL_PREREQUISITES} ${SMARTCAT_APP_INSTALL_PREREQUISITES} ${RCLONE_INSTALL_PREREQUISITES} > /tmp/commands \
