@@ -37,7 +37,9 @@ RUN set -ex \
     && mv /tmp/rclone-${RCLONE_VERSION}-linux-amd64/rclone /usr/bin \
     && rm -r /tmp/rclone* \
     && addgroup rclone \
-    && adduser -h /config -s /bin/ash -G rclone -D rclone
+    && adduser -h /config -s /bin/ash -G rclone -D rclone \
+    && apk add --no-cache libstdc++ libintl \
+	&& apk add --no-cache libc6-compat libunwind-dev
 
 ENV PAGER="less -FR~"
 ENV PATH="/root/bin:/serge/bin:${PATH}"
