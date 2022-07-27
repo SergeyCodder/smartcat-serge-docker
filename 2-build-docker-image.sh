@@ -18,7 +18,7 @@ More info:
 docker build \
     --build-arg GIT_SHA1="$GIT_SHA1" \
     --build-arg SERGE_BUILD="$SERGE_BUILD" \
-    -t docker-registry.smartcat.ai/serge-dotnet:"$value" \
+    -t sderunov/serge-dotnet:"$value" \
     -f Dockerfile \
     .
 

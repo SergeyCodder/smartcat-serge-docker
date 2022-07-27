@@ -2,6 +2,6 @@
 
 value=$(<.version)
 
-docker push docker-registry.smartcat.ai/serge-dotnet:"$value"
+docker push sderunov/serge-dotnet:"$value"
 
 sleep 5
