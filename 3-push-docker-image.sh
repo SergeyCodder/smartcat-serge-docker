@@ -2,6 +2,6 @@
 
 value=$(<.version)
 
-docker push sderunov/serge-dotnet:"$value"
+docker push smartcatcom/serge:"$value"
 
 sleep 5
